@@ -2,7 +2,7 @@
 -- check moderation plugin
 do
 
-local function create_group(msg)
+local function make_group(msg)
         -- superuser and admins only (because sudo are always has privilege)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
@@ -658,7 +658,7 @@ end
 
 return {
   patterns = {
-    "^[!/](creategroup) (.*)$",
+    "^[!/](makegroup) (.*)$",
     "^[!/](createrealm) (.*)$",
     "^[!/](setabout) (%d+) (.*)$",
     "^[!/](setrules) (%d+) (.*)$",
